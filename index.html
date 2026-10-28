@@ -32,21 +32,24 @@ body{margin:0;color:var(--ink);background:#2a1c10;
 .top{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.18em;color:var(--soft)}
 .seal{width:34px;height:34px;border-radius:5px;background:#b64b35;color:#fff6ea;display:grid;place-items:center;
   font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:18px;letter-spacing:0;transform:rotate(-4deg)}
-.hero{max-width:620px}
+.hero{max-width:720px}
 h1{margin:0;font-family:"Noto Serif SC","Songti SC","STSong",serif;font-weight:900;
-  font-size:clamp(48px,8.6vw,108px);line-height:1.02;letter-spacing:.02em;text-shadow:0 2px 30px #0008}
+  font-size:clamp(44px,6.4vw,88px);line-height:1.05;letter-spacing:.02em;text-shadow:0 2px 30px #0008}
 .lede{margin:18px 0 0;font-size:clamp(16px,1.6vw,19px);color:var(--soft);max-width:30em;text-wrap:balance}
 .lede em{font-style:normal;color:var(--ink)}
-.shelf{display:grid;grid-template-columns:3fr 2fr;gap:18px}
+.shelf{display:grid;gap:22px}
 .group{min-width:0;display:flex;flex-direction:column}
 .label{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
 .row{display:grid;gap:12px;flex:1}
-.apps .row{grid-template-columns:repeat(3,minmax(0,1fr))}
-.webs .row{grid-template-columns:repeat(2,minmax(0,1fr))}
-a.tile{display:flex;flex-direction:column;gap:10px;min-width:0;height:100%;padding:16px;border-radius:16px;
+.row{grid-template-columns:repeat(auto-fill,minmax(min(100%,218px),1fr))}
+a.tile,.soon{display:flex;flex-direction:column;gap:10px;min-width:0;height:100%;padding:16px;border-radius:16px;
   text-decoration:none;color:inherit;background:var(--glass);border:1px solid var(--edge);
   -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
-  transition:transform .25s ease,background .25s ease,border-color .25s ease}
+  transition:transform .25s ease,background .25s ease,border-color .25s ease;min-height:186px}
+.soon{align-items:center;justify-content:center;text-align:center;gap:4px;padding:16px;border-radius:16px;min-height:186px;
+  border:1.5px dashed #fff3e040;background:#1f160d66;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--muted)}
+.soon b{font-family:"Noto Serif SC","Songti SC",serif;font-weight:600;font-size:17px;color:var(--soft);letter-spacing:.12em}
+.soon span{font-size:12px}
 a.tile:hover{transform:translateY(-4px);background:var(--glass-hover);border-color:color-mix(in srgb,var(--accent) 60%,transparent)}
 a.tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .head{display:flex;align-items:center;gap:12px;min-width:0}
@@ -60,11 +63,9 @@ a.tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .go{font-size:13px;font-weight:600;color:var(--accent)}
 .friend{font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid color-mix(in srgb,var(--violet) 55%,transparent);color:var(--violet);margin-left:6px;vertical-align:2px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-weight:500}
 footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
-@media (max-width:980px){
-  .shelf{grid-template-columns:1fr}
-}
 @media (max-width:640px){
-  .apps .row,.webs .row{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  a.tile,.soon{min-height:0}
   .bg{background-position:68% 30%}
   .bg::after{background:linear-gradient(0deg,#140b05f5 0%,#140b05cc 55%,#140b0566 80%,#140b0526 100%)}
   .hero{padding-top:30vh}
@@ -78,7 +79,7 @@ footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:
   <div class="top"><span class="seal" aria-hidden="true">川</span>CHUANBEI.DEV</div>
 
   <section class="hero">
-    <h1>川贝的<br>小站</h1>
+    <h1>川贝的小站</h1>
     <p class="lede">做着玩的几个小东西。背景里写日记的这位，是岁月史书的史官<em>咕噜</em>。</p>
   </section>
 
@@ -101,6 +102,7 @@ footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:
           <p>好朋友做的：把音乐视频变成伴奏，配上逐字歌词，在 Mac 上开唱。</p>
           <span class="go">karahime.space →</span>
         </a>
+        <div class="soon" aria-label="未完待续"><b>未完待续</b><span>下一个 App 在路上</span></div>
       </div>
     </section>
 
@@ -117,6 +119,7 @@ footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:
           <p>两个人的四天三晚：美食、街区、地标和交通。</p>
           <span class="go">出发 →</span>
         </a>
+        <div class="soon" aria-label="未完待续"><b>未完待续</b><span>下一张网页在路上</span></div>
       </div>
     </section>
   </div>
