@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>川贝 · chuanbei.dev</title>
-<meta name="description" content="川贝做的几个小东西：山河纪，一张会动的中国历史地图；东京，慢慢吃，慢慢走，两个人的四天东京。">
+<meta name="description" content="川贝做的几个小东西：岁月史书和 ForeignMenu 两个 App；山河纪，一张会动的中国历史地图；东京，慢慢吃，慢慢走，两个人的四天东京。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&display=swap">
@@ -47,6 +47,22 @@ h2{margin:0;font-size:24px;line-height:1.3;font-weight:700;text-wrap:balance}
 .tags span{font-size:12px;padding:2px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .go{margin-top:6px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--accent);font-weight:600}
 .go small{color:var(--muted);font-weight:400;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.hero{margin:0 0 clamp(40px,6vw,64px);border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);position:relative;max-width:100%;height:clamp(220px,42vw,440px);background:var(--line)}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.hero figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 22px 16px;color:#fff8ec;font-size:14px;
+  background:linear-gradient(transparent,#1b140c99)}
+.hero figcaption b{font-family:"Noto Serif SC","Songti SC",serif;font-size:18px;margin-right:8px}
+h3.section{margin:0 0 16px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(18px,3vw,28px);margin-bottom:clamp(40px,6vw,64px)}
+a.app{display:flex;gap:18px;align-items:flex-start;min-width:0;padding:22px;text-decoration:none;color:inherit;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);transition:transform .25s ease,border-color .25s ease}
+a.app:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+a.app:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+a.app img{flex:none;width:76px;height:76px;border-radius:18px;box-shadow:0 1px 4px #0002}
+a.app .body{padding:0;gap:6px;min-width:0}
+a.app h2{font-size:21px}
+a.app h2 small{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;font-weight:500;color:var(--muted);margin-left:6px}
+.store{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:14px;font-weight:600;color:var(--accent)}
 footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
 </style>
 </head>
@@ -56,10 +72,36 @@ footer{margin-top:56px;color:var(--muted);font-size:13px;text-align:center}
     <div class="seal serif" aria-hidden="true">川</div>
     <div>
       <h1 class="serif">川贝的小站</h1>
-      <p class="sub">做着玩的几个小东西，点卡片进去看看</p>
+      <p class="sub">做着玩的几个小东西：两个 App，两张网页</p>
     </div>
   </header>
 
+  <figure class="hero">
+    <img src="gulu.jpg" alt="咕噜写日记：戴官帽的柴犬史官在窗边书桌上写日记" width="1200" height="800">
+    <figcaption><b>咕噜写日记</b>岁月史书的史官咕噜，也在认真记今天</figcaption>
+  </figure>
+
+  <h3 class="section">App</h3>
+  <div class="apps">
+    <a class="app" href="https://apps.apple.com/app/id6822641518" style="--accent:var(--red)">
+      <img src="icon-mehistory.jpg" alt="岁月史书图标" width="76" height="76">
+      <div class="body">
+        <h2 class="serif">岁月史书<small>meHistory</small></h2>
+        <p>一本会自己整理的日记。随手写或者说一句，自动变成带时间、人物和地点的事件；史官咕噜帮你回顾、整理和补写。</p>
+        <span class="store">在 App Store 下载 →</span>
+      </div>
+    </a>
+    <a class="app" href="https://apps.apple.com/app/id6805814861" style="--accent:var(--sage)">
+      <img src="icon-foreignmenu.jpg" alt="ForeignMenu 图标" width="76" height="76">
+      <div class="body">
+        <h2 class="serif">ForeignMenu<small>外文菜单</small></h2>
+        <p>看不懂菜单？拍一下，整页按原来的版式翻译好，菜名中外对照，指着就能点菜。</p>
+        <span class="store">在 App Store 下载 →</span>
+      </div>
+    </a>
+  </div>
+
+  <h3 class="section">网页</h3>
   <div class="grid">
     <a class="card" href="https://shanheji.chuanbei.dev/" style="--accent:var(--sage)">
       <div class="shot"><img src="shanheji.jpg" alt="山河纪：中国历史版图与大事编年" loading="lazy" width="960" height="600"></div>
