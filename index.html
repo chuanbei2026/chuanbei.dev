@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#2a1c10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;800&family=Noto+Serif+SC:wght@600;900&display=swap">
 <style>
 :root{
   --ink:#fff8ec; --soft:#f3e6d2cc; --muted:#e9d9c2a6;
@@ -73,17 +73,32 @@ footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:
   .bg::after{background:linear-gradient(0deg,#140b05f5 0%,#140b05cc 55%,#140b0566 80%,#140b0526 100%)}
   .hero{padding-top:30vh}
 }
+.lang{margin-left:auto;display:flex;padding:3px;border-radius:99px;background:var(--glass);border:1px solid var(--edge);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);letter-spacing:.04em}
+.lang button{font:inherit;font-size:12px;color:var(--muted);background:none;border:0;border-radius:99px;padding:4px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff3e01f;color:var(--ink)}
+.lang button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+html[lang="en"] h1,html[lang="en"] .name b,html[lang="en"] .soon b{font-family:"Noto Serif",Georgia,"Noto Serif SC",serif}
+html[lang="en"] h1{font-weight:800;font-size:clamp(40px,5.6vw,80px);letter-spacing:-.01em}
+html[lang="en"] .hero{max-width:820px}
+html[lang="en"] .soon b{letter-spacing:.04em}
+html[lang="en"] .label{letter-spacing:.2em}
 @media (prefers-reduced-motion:reduce){a.tile{transition:none}a.tile:hover{transform:none}}
 </style>
 </head>
 <body>
-<div class="bg" role="img" aria-label="咕噜写日记：戴官帽的柴犬史官在窗边书桌上写日记"></div>
+<div class="bg" role="img" data-i-aria="bg" aria-label="咕噜写日记：戴官帽的柴犬史官在窗边书桌上写日记"></div>
 <main class="page">
-  <div class="top"><span class="seal" aria-hidden="true">贝</span>CHUANBEI.DEV</div>
+  <div class="top"><span class="seal" aria-hidden="true">贝</span>CHUANBEI.DEV
+    <div class="lang" role="group" aria-label="语言 / Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
 
   <section class="hero">
-    <h1>川贝的小站</h1>
-    <p class="lede">你好呀旅行者，我是<em>川贝</em><br>恭喜你发现我的宝藏！交个朋友吧</p>
+    <h1 data-i="h1">川贝的小站</h1>
+    <p class="lede" data-i="lede">你好呀旅行者，我是<em>川贝</em><br>恭喜你发现我的宝藏！交个朋友吧</p>
   </section>
 
   <div class="shelf">
@@ -91,42 +106,103 @@ footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:
       <h2 class="label">App</h2>
       <div class="row">
         <a class="tile" href="https://apps.apple.com/app/id6822641518" style="--accent:var(--red)">
-          <div class="head"><img src="icon-mehistory.jpg" alt="" width="48" height="48"><div class="name"><b>岁月史书</b><span>meHistory · iPhone</span></div></div>
-          <p>会自己整理的日记。说一句，就变成带时间、人物和地点的事件。</p>
+          <div class="head"><img src="icon-mehistory.jpg" alt="" width="48" height="48"><div class="name"><b data-i="dsName">岁月史书</b><span data-i="dsSub">meHistory · iPhone</span></div></div>
+          <p data-i="dsText">会自己整理的日记。说一句，就变成带时间、人物和地点的事件。</p>
           <span class="go">App Store →</span>
         </a>
         <a class="tile" href="https://apps.apple.com/app/id6805814861" style="--accent:var(--sage)">
-          <div class="head"><img src="icon-foreignmenu.jpg" alt="" width="48" height="48"><div class="name"><b>ForeignMenu</b><span>外文菜单 · iPhone</span></div></div>
-          <p>拍一下外文菜单，整页按原版式翻译，菜名中外对照，指着就能点。</p>
+          <div class="head"><img src="icon-foreignmenu.jpg" alt="" width="48" height="48"><div class="name"><b>ForeignMenu</b><span data-i="fmSub">外文菜单 · iPhone</span></div></div>
+          <p data-i="fmText">拍一下外文菜单，整页按原版式翻译，菜名中外对照，指着就能点。</p>
           <span class="go">App Store →</span>
         </a>
-        <a class="tile" href="https://karahime.space/zh/" style="--accent:var(--violet)">
-          <div class="head"><img class="cut" src="icon-karahime.png" alt="" width="48" height="48"><div class="name"><b>歌罗姬<span class="friend">友军</span></b><span>KaraHime · Mac</span></div></div>
-          <p>好朋友做的：把音乐视频变成伴奏，配上逐字歌词，在 Mac 上开唱。</p>
+        <a class="tile" href="https://karahime.space/zh/" data-i-href="khHref" style="--accent:var(--violet)">
+          <div class="head"><img class="cut" src="icon-karahime.png" alt="" width="48" height="48"><div class="name"><b data-i="khName">歌罗姬<span class="friend">友军</span></b><span data-i="khSub">KaraHime · Mac</span></div></div>
+          <p data-i="khText">好朋友做的：把音乐视频变成伴奏，配上逐字歌词，在 Mac 上开唱。</p>
           <span class="go">karahime.space →</span>
         </a>
       </div>
     </section>
 
     <section class="group webs">
-      <h2 class="label">网页</h2>
+      <h2 class="label" data-i="webs">网页</h2>
       <div class="row">
         <a class="tile" href="https://shanheji.chuanbei.dev/" style="--accent:var(--sage)">
-          <img class="shot" src="shanheji.jpg?v=sanguo" alt="山河纪：公元234年的三国版图" width="960" height="600"><div class="head"><div class="name"><b>山河纪</b><span>历史地图</span></div></div>
-          <p>从夏商周到清末，沿真实年份走过王朝与疆域。</p>
-          <span class="go">进入 →</span>
+          <img class="shot" src="shanheji.jpg?v=sanguo" data-i-alt="shjAlt" alt="山河纪：公元234年的三国版图" width="960" height="600"><div class="head"><div class="name"><b data-i="shjName">山河纪</b><span data-i="shjSub">历史地图</span></div></div>
+          <p data-i="shjText">从夏商周到清末，沿真实年份走过王朝与疆域。</p>
+          <span class="go" data-i="shjGo">进入 →</span>
         </a>
         <a class="tile" href="https://tokyo.chuanbei.dev/" style="--accent:var(--red)">
-          <img class="shot" src="tokyo.jpg" alt="东京，慢慢吃页面截图" width="960" height="600"><div class="head"><div class="name"><b>东京，慢慢吃</b><span>Tokyo for two</span></div></div>
-          <p>两个人的四天三晚：美食、街区、地标和交通。</p>
-          <span class="go">出发 →</span>
+          <img class="shot" src="tokyo.jpg" data-i-alt="tkAlt" alt="东京，慢慢吃页面截图" width="960" height="600"><div class="head"><div class="name"><b data-i="tkName">东京，慢慢吃</b><span data-i="tkSub">Tokyo for two</span></div></div>
+          <p data-i="tkText">两个人的四天三晚：美食、街区、地标和交通。</p>
+          <span class="go" data-i="tkGo">出发 →</span>
         </a>
-        <div class="soon" aria-label="未完待续"><b>未完待续</b><span>下一张网页在路上</span></div>
+        <div class="soon" data-i-aria="soon" aria-label="未完待续"><b data-i="soon">未完待续</b><span data-i="soonSub">下一张网页在路上</span></div>
       </div>
     </section>
   </div>
 
-  <footer><span>© 川贝</span><span>chuanbei.dev</span></footer>
+  <footer><span data-i="foot">© 川贝</span><span>chuanbei.dev</span></footer>
 </main>
+<script>
+(() => {
+  const en = {
+    title: "Chuanbei · chuanbei.dev",
+    desc: "Little things Chuanbei made: two iPhone apps, meHistory and ForeignMenu, a friend's Mac app KaraHime, and two web pages, Shanheji and Tokyo for two.",
+    bg: "Gulu writing a diary: a Shiba Inu court historian in an official's hat at a desk by the window",
+    h1: "Chuanbei's Corner",
+    lede: "Hello, traveler. I’m <em>Chuanbei</em><br>You found my little treasure trove! Let’s be friends",
+    dsName: "meHistory", dsSub: "岁月史书 · iPhone",
+    dsText: "A diary that sorts itself out. Say a sentence; it becomes an event with time, people and place.",
+    fmSub: "Menus · iPhone",
+    fmText: "Snap a foreign menu and read it in its own layout, every dish side by side. Just point and order.",
+    khHref: "https://karahime.space/en/",
+    khName: "KaraHime<span class=\"friend\">ally</span>", khSub: "歌罗姬 · Mac",
+    khText: "By a good friend: turns music videos into karaoke with word-by-word lyrics, on your Mac.",
+    webs: "Web",
+    shjAlt: "Shanheji: the Three Kingdoms map in 234 CE",
+    shjName: "Shanheji", shjSub: "山河纪 · historical atlas (Chinese)",
+    shjText: "Walk year by year from the first dynasties to the late Qing as China’s borders shift.",
+    shjGo: "Enter →",
+    tkAlt: "Tokyo for two: page screenshot",
+    tkName: "Tokyo, Slowly", tkSub: "Tokyo for two (Chinese)",
+    tkText: "Four days, three nights for two: food, neighborhoods, landmarks and transit.",
+    tkGo: "Go →",
+    soon: "To be continued", soonSub: "The next page is on its way",
+    foot: "© Chuanbei"
+  };
+  const zh = {};
+  const q = s => document.querySelectorAll(s);
+  const desc = document.querySelector('meta[name="description"]');
+  q("[data-i]").forEach(el => zh[el.dataset.i] = el.innerHTML);
+  q("[data-i-alt]").forEach(el => zh[el.dataset.iAlt] = el.alt);
+  q("[data-i-aria]").forEach(el => zh[el.dataset.iAria] = el.getAttribute("aria-label"));
+  q("[data-i-href]").forEach(el => zh[el.dataset.iHref] = el.href);
+  zh.title = document.title; zh.desc = desc.content;
+
+  function apply(lang) {
+    const t = lang === "en" ? en : zh;
+    document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+    document.title = t.title; desc.content = t.desc;
+    q("[data-i]").forEach(el => el.innerHTML = t[el.dataset.i]);
+    q("[data-i-alt]").forEach(el => el.alt = t[el.dataset.iAlt]);
+    q("[data-i-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.iAria]));
+    q("[data-i-href]").forEach(el => el.href = t[el.dataset.iHref]);
+    q("[data-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  }
+
+  let lang = new URLSearchParams(location.search).get("lang");
+  if (lang !== "zh" && lang !== "en") {
+    try { lang = localStorage.getItem("lang"); } catch {}
+  }
+  if (lang !== "zh" && lang !== "en") {
+    lang = (navigator.languages || [navigator.language]).some(l => /^zh/i.test(l)) ? "zh" : "en";
+  }
+  apply(lang);
+  q("[data-lang]").forEach(b => b.addEventListener("click", () => {
+    apply(b.dataset.lang);
+    try { localStorage.setItem("lang", b.dataset.lang); } catch {}
+  }));
+})();
+</script>
 </body>
 </html>
